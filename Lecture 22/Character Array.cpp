@@ -1,4 +1,7 @@
 #include <iostream>
+#include <string>
+#include <cstring>
+
 using namespace std;
 
 int getLength(char name[]){
@@ -132,6 +135,31 @@ string removeAdjDupl(string s){
     }
     return str;
 }
+
+
+int  strCompression(char name[]){
+    int ansIndex = 0;
+    int i=0;
+    int n = strlen(name);
+    while(i<n){
+
+        int j = i+1;
+        while(j<n && name[i]==name[j]){
+            j++;
+        }
+
+        name[ansIndex++]= name[i];
+        int  count = j-i;
+        if(count>1){
+            std::string cht = std::to_string(count);
+            for(char ch: cht){
+                name[ansIndex++]=ch;
+            }
+        }
+        i=j;
+    }
+    return ansIndex;
+}
 int main(){
     // // Character Array;
 
@@ -214,7 +242,14 @@ int main(){
 
 
     // // String Compression;
+    char name[20];
+    cin>>name;
+    int ansIndex = strCompression(name);
     
+    for(int i=0; i< ansIndex; i++){
+        cout<<name[i]<<" ";
+    }
+    cout<<endl;
 
 
 
