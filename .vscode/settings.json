@@ -56,5 +56,9 @@
         "xtree": "cpp",
         "xutility": "cpp"
     },
-    "C_Cpp.errorSquiggles": "enabled"
+    "C_Cpp.errorSquiggles": "enabled",
+    "liveServer.settings.ChromeDebuggingAttachment": false,
+    "liveServer.settings.fullReload": true,
+    "liveServer.settings.AdvanceCustomBrowserCmdLine": "",
+    "liveServer.settings.root": ""
 }
