@@ -50,27 +50,12 @@ void insertAtEnd(Node* &head,Node* &Tail, int data){
     Tail=newNode;
 }
 
-// remove duplicate function
-void removeDupl(Node* &head){
-    if(head==NULL){
-        return ;
-    }
-    Node*prev =head;
-    Node* curr = head->next;
-    while( curr!=NULL || curr->next ){
-        if(prev->data==curr->data){
-            curr=curr->next;
-        }else{
-            prev=curr;
-            curr =curr->next;
-        }
-    }
-
-}
-
 
 void print(Node* &head){    
     //temp pointer point to linked list head
+    if(head==NULL){
+        cout<<"list is empty"<<endl;
+    }
     Node* temp = head;
 
     while(temp!=NULL){
@@ -79,6 +64,29 @@ void print(Node* &head){
     }
     cout<<endl;
 }
+
+// remove duplicate function
+void removeDupl(Node* &head){
+    print(head);
+    if(head==NULL){
+        return ;
+    }
+    Node*curr =head;
+     
+    while( (curr!=NULL)  ){
+        if( (curr->next!=NULL) &&(curr->data==curr->next->data) ){
+            Node* nodeToDelete=curr->next; 
+            curr->next=curr->next->next;
+            nodeToDelete=NULL;
+            delete nodeToDelete;            
+        }else{
+            curr =curr->next;            
+        }
+    }
+}
+
+
+
 
 int main(){
 
@@ -100,8 +108,22 @@ int main(){
     print(head);
     
 
-    //remove duplicate form LL
-    removeDupli(head);
+    //remove duplicate form sorted singly LL
+    removeDupl(head);
+    cout<<"After head data "<<head->data<<endl;
+    print(head);
+
+
+    //remove duplicate form unsorted singly LL
+            /*         Pending
+            3 Aproach:-
+                    i) for each element traverse whole LL and delete which is same 
+                        T.C.=O(n) S.C. = O(1)
+                    ii) using map check node is visited or not
+                        T.C.=O(n) S.C. = O(n)
+                    iii) first sort LL using T.C.=O(nlogn)
+                          Then reverse as above Qustion with T.C.=O(n)
+                        T.C.=O(nlogn) S.C. = O(1)*/
 
     return 0;
 }
