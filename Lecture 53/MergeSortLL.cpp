@@ -101,20 +101,20 @@ Node* merge(Node* left, Node* right){
         right = right->next;
     }
     ans = ans->next;
-    print(ans);
+    // print(ans);
      return ans;
 }
 
-Node* findMid(Node* &head){
+Node* findMid(Node* head){
     Node* slow = head;
-    Node* fast = head;
-    while(fast!=NULL && fast->next->next!=NULL){
+    Node* fast = head->next;
+    while(fast!=NULL && fast->next!=NULL){
         fast= fast->next->next ? fast->next->next : fast->next ;        
         slow = slow->next;
     }
     return slow;
 }
-Node* mergeSort(Node* &head){
+Node* mergeSort(Node* head){
 
     //base case 
     if(head==NULL || head->next==NULL){
@@ -123,20 +123,20 @@ Node* mergeSort(Node* &head){
 
     // break linked list into 2 halves, after finding mid
     Node* mid = findMid(head);
-    cout<<"Inside merge sort function after mid find : "<< mid<<endl;
+    // cout<<"Inside merge sort function after mid find : "<< mid ->data<<endl;
     Node* left = head;
     Node* right = mid->next;
     mid->next=NULL;
-    cout<<"After first section : "<<endl;
+    // cout<<"After first section : "<<endl;
 
     // recursive calls to sort both halves
     left = mergeSort(left);
     right = mergeSort(right);
-    cout<<"After second section : "<<endl;
+    // cout<<"After second section : "<<endl;
 
     // merge both left and right halves
     Node * ans = merge(left,right);
-    cout<<"After last section : "<<endl;
+    // cout<<"After last section : "<<endl;
     return ans;
 }
 int main(){
