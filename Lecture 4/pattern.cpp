@@ -63,7 +63,7 @@ int main()
     // /*  1
     //     2 1
     //     3 2 1
-    //     4 3 2 1   formula i-j+1*/
+    //     4 3 2 1   formula i-j+1 */
     // int row, initial;
     // cin>>row;
     // initial=1;
@@ -78,6 +78,25 @@ int main()
     //     cout<<endl;
     //     initial+=1;
     // }
+
+
+    // // /*  1
+    // //     2 3
+    // //     4 5 6
+    // //     7 8 9 10   */
+    // int row;
+    // cin>>row;
+    // int count =1;
+    // for(int i=1; i<=row; i++){
+    //     int col =0;
+    //     while(col<i){
+    //         cout<<count<<" ";
+    //         count++;
+    //         col++;
+    //     }cout<<endl;
+    // }
+
+
 
     // /*   1
     //     121
@@ -114,42 +133,150 @@ int main()
     // }
   
 
-    /*
-        1234554321
-        1234**4321
-        123****321
-        12******21
-        1********1
+//     /*
+//         1234554321
+//         1234**4321
+//         123****321
+//         12******21
+//         1********1
+//     */
+//    int n, row;
+//    cin>> n;
+//    row=1;
+//    while(row<=n){
+//     //first triangle
+//     int col1=1;
+//     while (col1<=n-row+1){
+//         cout<<col1<<' ';
+//         col1+=1;
+//     }
+    
+//     // second triangle
+//     int col2=row-1;
+//     while(col2){
+//         cout<<"* * ";
+//         col2-=1;
+//     }
+//     //third triangle
+//     int col3 = n-row+1;
+//     while(col3){
+//         cout<<col3<<' ';
+//         col3-=1;
+//     }
+//     cout<<endl;
+//     row+=1;
+//    }
+
+
+    // /*  A B C D
+    //     A B C D
+    //     A B C D
+    //     A B C D
+    // matrix of n*n as input given */
+    // int n;
+    // cin>>n;
+    // for ( int row =0; row<n; row++){
+    //     for(int col=0; col<n; col++){
+    //         char ch ='A';
+    //         ch = ch+col;
+    //         cout<<ch<<" ";
+    //     }cout<<endl;
+    // }
+
+
+    // // /*  A B C D
+    // //     E F G H
+    // //     I J K L
+    // //     M N O P
+    // // matrix of n*n as input given */
+    // int n;
+    // cin>>n;
+    // char ch ='A';
+    // for( int row =0; row<n; row++){
+    //     for(int col =0; col<n; col++){
+    //         cout<<ch<<" ";
+    //         ch = ch+1;
+    //     }cout<<endl;
+    // }
+    
+    // // /* A B C            
+    // //     B C D
+    // //     C D E
+    // // matrix of n*n as input given */
+    // int n ;
+    // cin>>n;
+    // for(int row=0; row<n; row++){
+    //     for(int col =0; col<n; col++){
+    //         char ch = 'A'+row+col;            
+    //         cout<<ch<<" ";
+    //     }cout<<endl;
+    // }
+
+
+    // /*  D
+    // //  C D
+    // //  B C D
+    // //  A B C D
+    //     mtrix of n*n input n is given */
+    // int n;
+    // cin>>n;
+    // int row =1;
+    // while (row<=n)   
+    // {
+    //     int col =0;
+    //     while(col<row){
+    //         char ch = 'A'+n-row+col;
+    //         cout<<ch<<" ";
+    //         col++;
+    //     }cout<<endl;
+    //     row++;
+    // }
+
+
+
+//     /*      *
+//            **
+//           ***
+//          ****
+//         *****
+//     //  mtrix of n*n input n is given
+//     */
+//    int n;
+//    cin>>n;
+//    int row =1;
+//    while(row<=n){
+//     int space = n-row;
+//     while(space>0){
+//         cout<<" ";
+//         space--;
+//     }
+//     int star = 0;
+//     while(star<row){
+//         cout<<"*";
+//         star++;
+//     }cout<<endl;
+//     row++;
+//    }
+
+
+    /*  *****
+        ****
+        ***
+        **
+        *
+    //  mtrix of n*n input n is given
     */
-   int n, row;
-   cin>> n;
-   row=1;
-   while(row<=n){
-    //first triangle
-    int col1=1;
-    while (col1<=n-row+1){
-        cout<<col1<<' ';
-        col1+=1;
+    int n;
+    cin>>n;
+    int row =0;
+    while(row<n){
+        int col = n-row;
+        while(col>0){
+            cout<<"*";
+            col--;
+        }cout<<endl;
+        row++;
     }
     
-    // second triangle
-    int col2=row-1;
-    while(col2){
-        cout<<"* * ";
-        col2-=1;
-    }
-    //third triangle
-    int col3 = n-row+1;
-    while(col3){
-        cout<<col3<<' ';
-        col3-=1;
-    }
-
-
-    
-
-    cout<<endl;
-    row+=1;
-   }
-    
+return 0;
 }
